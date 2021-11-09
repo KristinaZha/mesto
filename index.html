@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
+    
+    <title>Mesto</title>
+</head>
+
+<body class="root">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="image/logo.svg" alt="Место" />
+            <img class="header__line" src="image/Line.jpg" alt="Линия" />
+        </header>
+        <main>
+            <section class="profile">
+                <img class="profile__avatar" src="image/Avatar.jpg" alt="Аватарка" />
+                <div class="profile__box">
+                    <div class="profile__text">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button">
+                            <img src="image/button.svg" alt="" />
+                        </button>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                <button class="profile__button">
+                    <img class="profile__pic" src="image/Vector.svg" alt="Плюс" />
+                </button>
+            </section>
+            <section class="elements">
+                <div class="element">
+                    <img class="element__pic" src="image/Карачаево-Черкессия.jpg" alt="Вид на храм" />
+                    <div class="element__box">
+                        <h3 class="element__title">Карачаевск</h3>
+                        <img class="element__like" src="image/Like.svg" alt="Лайк" />
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__pic" src="image/Эльбрус.jpg" alt="Вид на Эльбрус" />
+                    <div class="element__box">
+                        <h3 class="element__title">Гора Эльбрус</h3>
+                        <img class="element__like" src="image/Like.svg" alt="Лайк" />
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__pic" src="image/Домбай.jpg" alt="Вид на Домбай" />
+                    <div class="element__box">
+                        <h3 class="element__title">Домбай</h3>
+                        <img class="element__like" src="image/Like.svg" alt="" />
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__pic" src="image/Эльбрус.jpg" alt="Вид на гору" />
+                    <div class="element__box">
+                        <h3 class="element__title">Гора Эльбрус</h3>
+                        <img class="element__like" src="image/Like.svg" alt="Лайк" />
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__pic" src="image/Домбай.jpg" alt="Домбай" />
+                    <div class="element__box">
+                        <h3 class="element__title">Домбай</h3>
+                        <img class="element__like" src="image/Like.svg" alt="Лайк" />
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__pic" src="image/Карачаево-Черкессия.jpg" alt="Карачаево-Черкессия" />
+                    <div class="element__box">
+                        <h3 class="element__title">Карачаево-Черкессия</h3>
+                        <img class="element__like" src="image/Like.svg" alt="Лайк" />
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__subtitle">&copy;2020 Mesto Russia</p>
+        </footer>
+    </div>
+
+    <div class="popup popup_opened">
+        <section class="popup__window">
+            <button class="popup__close-button"></button>
+            <section class="popup__content">
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form action="#" class="popup__form">
+                    <input class=" popup__type-name" type="text" value="Жак-Ив Кусто" />
+                    <input class=" popup__type-text" type="text" value="Исследователь океана" />
+                    <button class="popup__type-submit">Сохранить</button>
+                </form>
+            </section>
+        </section>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

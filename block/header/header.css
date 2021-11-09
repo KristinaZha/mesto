@@ -1,0 +1,15 @@
+.header {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  @media (max-width: 670px) {
+    .header{
+      max-width: 320px;
+      
+    }
+  }
