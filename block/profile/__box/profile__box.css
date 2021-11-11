@@ -1,12 +1,10 @@
 .profile__box {
-    display: flex;
-    flex-direction: column;
-   
-  }
+  display: flex;
+  flex-direction: column;
+}
 
-  @media (max-width: 670px) {
-    .profile__box{
-      text-align: center;
-      
-    }
+@media (max-width: 670px) {
+  .profile__box {
+    text-align: center;
   }
+}
