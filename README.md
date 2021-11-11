@@ -9,4 +9,4 @@
 
 
 
- [ССЫЛКА НА ПРОЕКТ НАХОДИТЬСЯ ЗДЕСЬ](https://kristinazha.github.io/mesto/)
+ [ССЫЛКА НА ПРОЕКТ НАХОДИТСЯ ЗДЕСЬ](https://kristinazha.github.io/mesto/)
