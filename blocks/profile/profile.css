@@ -1,8 +1,8 @@
 .profile {
   display: grid;
-  justify-items: end;
+  justify-items: start;
   align-items: center;
-  grid-template-columns: 150px 1fr 1fr;
+  grid-template-columns: 150px 1fr 150px;
   margin-top: 36px;
   max-width: 100%;
   margin-left: auto;

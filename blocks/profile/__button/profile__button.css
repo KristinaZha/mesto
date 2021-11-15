@@ -3,6 +3,7 @@
   box-sizing: border-box;
   border-radius: 2px;
   background-color: black;
+  cursor: pointer;
   width: 150px;
   height: 50px;
 }

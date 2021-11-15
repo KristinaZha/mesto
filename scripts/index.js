@@ -28,4 +28,4 @@ function formSubmitHandler(evt) {
 profileButton.addEventListener("click", openPopup)
 closeButton.addEventListener("click", closePopup)
 formElement.addEventListener("submit", formSubmitHandler)
-console.log(formElement)
+
