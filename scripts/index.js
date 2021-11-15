@@ -1,40 +1,31 @@
-const popupElement = document.querySelector(".popup")
-const closeButton = document.querySelector(".popup__close-button")
-const profile = document.querySelector(".profile")
-const profileButton = document.querySelector(".profile__edit-button")
-
+const popupElement = document.querySelector(".popup");
+const closeButton = document.querySelector(".popup__close-button");
+const profileButton = document.querySelector(".profile__edit-button");
+let formElement = document.querySelector(".form");
+let userName = document.querySelector(".profile__title");
+let userText = document.querySelector(".profile__subtitle");
+let FormName = document.querySelector(".form__type_text_name");
+let FormRole = document.querySelector(".form__type_text_role");
 
 function openPopup() {
-  popupElement.classList.remove("popup_opened")
+  popupElement.classList.add("popup_opened");
+  FormName.value = userName.textContent;
+  FormRole.value = userText.textContent;
+  
 }
 
 function closePopup() {
-  popupElement.classList.add("popup_opened")
+  popupElement.classList.remove("popup_opened");
 }
-
-
-profileButton.addEventListener("click", openPopup)
-
-closeButton.addEventListener("click", closePopup)
-
-let formElement = document.querySelector(".popup__form")
-let nameInput = document.querySelector(".popup__type-name")
-let textInput = document.querySelector(".popup__type-text")
-let saveButton = document.querySelector(".popup__type-submit")
-let userName = document.querySelector(".profile__title")
-let userText = document.querySelector(".profile__subtitle")
 
 function formSubmitHandler(evt) {
-  evt.preventDefault()
- 
-
-  let newName = nameInput.value
-  userName.textContent = newName
-
-  let newText = textInput.value
-  userText.textContent = newText
-
+  evt.preventDefault();
+  userName.textContent = FormName.value;
+  userText.textContent = FormRole.value;
   closePopup();
 }
-console.log(formElement);
+
+profileButton.addEventListener("click", openPopup)
+closeButton.addEventListener("click", closePopup)
 formElement.addEventListener("submit", formSubmitHandler)
+console.log(formElement)

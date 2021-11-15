@@ -1,0 +1,14 @@
+.popup__close-image{
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 670px) {
+    .popup__close-image {
+      width: 20px;
+      height: 20px;
+      right: 0px;
+      top: -45px;
+    }
+  }
+  
