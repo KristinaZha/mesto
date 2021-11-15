@@ -8,7 +8,6 @@
   z-index: 500;
   align-items: center;
   justify-content: center;
-  display: flex;
   font-family: "Inter", Arial, sans-serif;
   display: none;
 }
