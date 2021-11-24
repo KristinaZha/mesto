@@ -1,0 +1,11 @@
+.form-add {
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+@media (max-width: 670px) {
+  .form-add {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}

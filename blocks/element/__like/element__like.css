@@ -2,12 +2,17 @@
   width: 22px;
   height: 19px;
   border: none;
-  background-color: white;
+  background-color: transparent;
   padding: 0;
   cursor: pointer;
+
 }
 
 .element__like:hover {
   opacity: 0.5;
   transition: 0.5s;
+}
+
+.element__like:active{
+  fill: black;
 }

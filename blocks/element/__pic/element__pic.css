@@ -1,4 +1,8 @@
 .element__pic {
   border-radius: 10px 10px 0px 0px;
-  max-width: 100%;
+  width: 282px;
+  height: 282px;
+  z-index: 1;
+  position: relative;
+  
 }
