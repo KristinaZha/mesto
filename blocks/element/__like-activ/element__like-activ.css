@@ -1,3 +1,11 @@
 .element__like-activ{
-    fill: black;
+    width: 22px;
+  height: 19px;
+  border: none;
+  background-image: url(../../../image/Union.jpg);
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  
+
 }

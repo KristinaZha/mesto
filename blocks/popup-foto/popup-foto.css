@@ -1,0 +1,16 @@
+.popup-foto {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", Arial, sans-serif;
+    transition: all 0.5s ease;
+    visibility: hidden;
+  }
+  

@@ -4,8 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   background: #ffffff;
+object-fit: initial;
   border-radius: 10px;
   max-width: calc((100% - 34px) / 3);
+  max-height: 361px;
   margin-bottom: 20px;
   position: relative;
 }

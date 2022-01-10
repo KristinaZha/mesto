@@ -1,10 +1,14 @@
 .element__like {
-  width: 22px;
+  width: 25px;
   height: 19px;
   border: none;
+
   background-color: transparent;
+  background-size: 100%;
+  background:url(../../../image/like.jpg) no-repeat;
   padding: 0;
   cursor: pointer;
+  
 
 }
 
@@ -13,6 +17,4 @@
   transition: 0.5s;
 }
 
-.element__like:active{
-  fill: black;
-}
+

@@ -1,4 +1,5 @@
 .popup-add {
+  display: flex;
   position: fixed;
   top: 0;
   right: 0;
@@ -9,5 +10,7 @@
   align-items: center;
   justify-content: center;
   font-family: "Inter", Arial, sans-serif;
-  display: none;
+  transition: all 0.5s ease;
+  opacity: 0;
+  visibility: hidden;
 }
