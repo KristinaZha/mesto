@@ -1,4 +1,4 @@
-.form__type-submit {
+.form-profile__type-submit {
   width: 358px;
   height: 50px;
   background: #000000;
@@ -18,13 +18,13 @@
   cursor: pointer;
 }
 
-.form__type-submit:hover {
+.form-profile__type-submit:hover {
   opacity: 0.8;
   transition: 0.5s;
 }
 
 @media (max-width: 670px) {
-  .form__type-submit {
+  .form-profile__type-submit {
     width: 238px;
     height: 46px;
     font-size: 14px;

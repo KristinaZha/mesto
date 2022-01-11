@@ -1,54 +1,54 @@
-const popupElement = document.querySelector(".popup")
-const buttonClose = document.querySelector(".popup__close-button")
+const popupProfile = document.querySelector(".popup-profile")
+const buttonClose = document.querySelector(".popup-profile__close-button")
 const profileButton = document.querySelector(".profile__edit-button")
 const formElement = document.querySelector(".form")
 const userName = document.querySelector(".profile__title")
 const userText = document.querySelector(".profile__subtitle")
-const FormName = document.querySelector(".form__type_text_name")
-const FormRole = document.querySelector(".form__type_text_role")
-const elementAdd = document.querySelector(".popup-add")
+const userNameInput = document.querySelector(".form__input_name")
+const formInputRole = document.querySelector(".form__input_role")
+const popupAddCard = document.querySelector(".popup-add")
 const buttonCloseAdd = document.querySelector(".popup-add__close-button")
-const popupFoto = document.querySelector(".popup-foto")
+const popupPhoto = document.querySelector(".popup-foto")
 // добавление карточки через form
 const buttonAdd = document.querySelector(".profile__button")
 const elementPic = document.querySelector(".element__pic")
 const elementTitle = document.querySelector(".element__title")
-const name = document.querySelector(".form-add__type_text_name")
-const hrefPic = document.querySelector(".form-add__type_text_role")
-const cardAdd = document.querySelector(".form-add")
+const name = document.querySelector(".form__input_text")
+const hrefPic = document.querySelector(".form__input_image")
+const formAddCard = document.querySelector(".form-card")
 //ф-я открытия попапа добавления картинки
-function openPopupAdd() {
-  elementAdd.classList.add("popup-add_opened")
+function openPopupAddCard() {
+  popupAddCard.classList.add("popup_opened")
 }
 //ф-я закрытия попапа картинки
-function closePopupAdd() {
-  elementAdd.classList.remove("popup-add_opened")
+function closePopupAddCard() {
+  popupAddCard.classList.remove("popup_opened")
 }
 //ф-я открытия попапа редактирования профайла
-function openPopup() {
-  popupElement.classList.add("popup_opened")
-  FormName.value = userName.textContent
+function openPopupProfile() {
+  popupProfile.classList.add("popup_opened")
+  userNameInput.value = userName.textContent
   FormRole.value = userText.textContent
 }
 //ф-я закрытия попапа редактирования профайла
-function closePopup() {
-  popupElement.classList.remove("popup_opened")
+function closePopupProfile() {
+  popupProfile.classList.remove("popup_opened")
 }
 //форма изменений профайла
 function formSubmitHandler(evt) {
   evt.preventDefault()
-  userName.textContent = FormName.value
-  userText.textContent = FormRole.value
-  closePopup()
+  userName.textContent = userNameInput.value
+  userText.textContent = formInputRole.value
+  closePopupProfile()
 }
 //форма добавления картинки
-function formAddSubmitHandler(evt) {
+function CardAddSubmitHandler(evt) {
   evt.preventDefault()
-  const inputName = Name.value
+  const inputName = name.value
   const inputImage = hrefPic.value
   const newCard = createDomNode({ name: inputName, link: inputImage })
   elements.prepend(newCard)
-  closePopupAdd()
+  closePopupAddCard()
 }
 
 // массив
@@ -108,7 +108,7 @@ const createDomNode = (item) => {
   elementTemplate
     .querySelector(".element__pic")
     .addEventListener("click", function (evt) {// ф-я открытия попапа с картинкой
-      popupFoto.classList.add("popup-foto_opened")
+      popupPhoto.classList.add("popup_opened")
       imagePopup.src = item.link
       captionPopup.textContent = item.name
     })
@@ -124,17 +124,15 @@ const result = initialCards.map((item) => {
 })
 elements.append(...result)
 
-const fotoClose = document.querySelector(".popup-foto__close-button") // кнопка закрытие попапа с  фото
-function closePopupFoto() {
-  popupFoto.classList.remove("popup-foto_opened")
+const buttonClosePhoto = document.querySelector(".popup-foto__close-button") // кнопка закрытие попапа с  фото
+function closePopupPhoto() {
+  popupPhoto.classList.remove("popup_opened")
 }
 // слушатели
-fotoClose.addEventListener("click", closePopupFoto)
-buttonCloseAdd.addEventListener("click", closePopupAdd)
-profileButton.addEventListener("click", openPopup)
-buttonClose.addEventListener("click", closePopup)
+buttonClosePhoto.addEventListener("click", closePopupPhoto)
+buttonCloseAdd.addEventListener("click", closePopupAddCard)
+profileButton.addEventListener("click", openPopupProfile)
+buttonClose.addEventListener("click", closePopupProfile)
 formElement.addEventListener("submit", formSubmitHandler)
-profileButton.addEventListener("click", openPopup)
-buttonClose.addEventListener("click", closePopup)
-buttonAdd.addEventListener("click", openPopupAdd)
-cardAdd.addEventListener("submit", formAddSubmitHandler)
+buttonAdd.addEventListener("click", openPopupAddCard)
+formAddCard.addEventListener("submit", CardAddSubmitHandler)
