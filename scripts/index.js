@@ -28,7 +28,7 @@ function closePopupAddCard() {
 function openPopupProfile() {
   popupProfile.classList.add("popup_opened")
   userNameInput.value = userName.textContent
-  FormRole.value = userText.textContent
+  formInputRole.value = userText.textContent
 }
 //ф-я закрытия попапа редактирования профайла
 function closePopupProfile() {
