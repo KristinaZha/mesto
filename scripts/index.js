@@ -16,24 +16,53 @@ const elementTitle = document.querySelector(".element__title")
 const name = document.querySelector(".form__input_text")
 const hrefPic = document.querySelector(".form__input_image")
 const formAddCard = document.querySelector(".form-card")
+const buttonSubmit = document.querySelector(".form-card__type-submit")
+const popup = document.querySelectorAll('.popup')
+
 //ф-я открытия попапа добавления картинки
 function openPopupAddCard() {
   popupAddCard.classList.add("popup_opened")
-}
+  document.addEventListener('keydown', closePopupEscape);
+};
+
 //ф-я закрытия попапа картинки
 function closePopupAddCard() {
   popupAddCard.classList.remove("popup_opened")
+  document.removeEventListener('keydown', closePopupEscape);
 }
+
 //ф-я открытия попапа редактирования профайла
 function openPopupProfile() {
   popupProfile.classList.add("popup_opened")
   userNameInput.value = userName.textContent
   formInputRole.value = userText.textContent
+  document.addEventListener('keydown', closePopupEscape)
+
 }
 //ф-я закрытия попапа редактирования профайла
 function closePopupProfile() {
   popupProfile.classList.remove("popup_opened")
+  document.removeEventListener('keydown', closePopupEscape);
+
 }
+//ф-я закрытия попапов esc
+function closePopupEscape(evt) {
+  if (evt.key === 'Escape') {
+    closePopupAddCard(document.querySelector('popup_opened'));
+    closePopupProfile(document.querySelector('popup_opened'));
+    closePopupPhoto(document.querySelector('popup_opened'));
+  }
+};
+//ф-я закрытия при клике на оверлей
+popup.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+      closePopupAddCard(document.querySelector('popup_opened'));
+      closePopupProfile(document.querySelector('popup_opened'));
+      closePopupPhoto(document.querySelector('popup_opened'));
+    }
+  })
+})
 //форма изменений профайла
 function formSubmitHandler(evt) {
   evt.preventDefault()
@@ -47,8 +76,9 @@ function CardAddSubmitHandler(evt) {
   const inputName = name.value
   const inputImage = hrefPic.value
   const newCard = createDomNode({ name: inputName, link: inputImage })
-  elements.prepend(newCard)
-  closePopupAddCard()
+  elements.prepend(newCard);
+  formAddCard.reset();
+  closePopupAddCard();
 }
 
 // массив
@@ -109,12 +139,12 @@ const createDomNode = (item) => {
     .querySelector(".element__pic")
     .addEventListener("click", function (evt) {// ф-я открытия попапа с картинкой
       popupPhoto.classList.add("popup_opened")
+      document.addEventListener('keydown', closePopupEscape)
       imagePopup.src = item.link
       captionPopup.textContent = item.name
     })
   buttonLike.addEventListener("click", likeCard) //слушатель лайка
   buttonDeleteCard.addEventListener("click", deleteCard) //слушатель удаления карточки
-
   elementTemplate.prepend
   return elementTemplate
 }
@@ -125,9 +155,15 @@ const result = initialCards.map((item) => {
 elements.append(...result)
 
 const buttonClosePhoto = document.querySelector(".popup-foto__close-button") // кнопка закрытие попапа с  фото
+
+
+//ф-я закрытия попапа с фото
 function closePopupPhoto() {
-  popupPhoto.classList.remove("popup_opened")
+  popupPhoto.classList.remove("popup_opened");
+  document.removeEventListener('keydown', closePopupEscape);
 }
+
+
 // слушатели
 buttonClosePhoto.addEventListener("click", closePopupPhoto)
 buttonCloseAdd.addEventListener("click", closePopupAddCard)
@@ -136,3 +172,14 @@ buttonClose.addEventListener("click", closePopupProfile)
 formElement.addEventListener("submit", formSubmitHandler)
 buttonAdd.addEventListener("click", openPopupAddCard)
 formAddCard.addEventListener("submit", CardAddSubmitHandler)
+
+
+
+
+
+
+
+
+
+
+
