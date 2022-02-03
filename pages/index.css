@@ -51,7 +51,7 @@
 @import url(../blocks/form-card/form-card.css);
 @import url(../blocks/form/__text/_type_error/form__text_type_error.css);
 
-@import url(../blocks/form-card/__type-submit/form-card__type-submit.css);
+@import url(../blocks/form/__type-submit/form__type-submit.css);
 @import url(../blocks/popup-foto/popup-foto.css);
 
 @import url(../blocks/popup-foto/__image/popup-foto__image.css);

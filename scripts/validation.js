@@ -68,7 +68,7 @@ function enableValidation({ formSelector, inputSelector, ...rest }) {
 enableValidation({
     formSelector: '.form',
     inputSelector: '.form__input',
-    submitButtonSelector: '.form-card__type-submit',
+    submitButtonSelector: '.form__type-submit',
     inputErrorClass: 'form__text_type_error',
     errorClass: 'error-message_visible',
     inactiveButtonClass: 'form__button_disabled'

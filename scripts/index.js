@@ -1,5 +1,5 @@
 const popupProfile = document.querySelector(".popup-profile")
-const buttonClose = document.querySelector(".popup-profile__close-button")
+const buttonClose = document.querySelector(".popup-profile__close-button")//
 const profileButton = document.querySelector(".profile__edit-button")
 const formElement = document.querySelector(".form")
 const userName = document.querySelector(".profile__title")
@@ -7,7 +7,7 @@ const userText = document.querySelector(".profile__subtitle")
 const userNameInput = document.querySelector(".form__input_name")
 const formInputRole = document.querySelector(".form__input_role")
 const popupAddCard = document.querySelector(".popup-add")
-const buttonCloseAdd = document.querySelector(".popup-add__close-button")
+const buttonCloseAdd = document.querySelector(".popup-add__close-button")//
 const popupPhoto = document.querySelector(".popup-foto")
 // добавление карточки через form
 const buttonAdd = document.querySelector(".profile__button")
@@ -16,7 +16,7 @@ const elementTitle = document.querySelector(".element__title")
 const name = document.querySelector(".form__input_text")
 const hrefPic = document.querySelector(".form__input_image")
 const formAddCard = document.querySelector(".form-card")
-const buttonSubmit = document.querySelector(".form-card__type-submit")
+const buttonSubmit = document.querySelector(".form__type-submit")
 const popup = document.querySelectorAll('.popup')
 
 //ф-я открытия попапа добавления картинки
@@ -165,10 +165,10 @@ function closePopupPhoto() {
 
 
 // слушатели
-buttonClosePhoto.addEventListener("click", closePopupPhoto)
-buttonCloseAdd.addEventListener("click", closePopupAddCard)
+buttonClosePhoto.addEventListener("click", closePopupPhoto)//
+buttonCloseAdd.addEventListener("click", closePopupAddCard)//
 profileButton.addEventListener("click", openPopupProfile)
-buttonClose.addEventListener("click", closePopupProfile)
+buttonClose.addEventListener("click", closePopupProfile)//
 formElement.addEventListener("submit", formSubmitHandler)
 buttonAdd.addEventListener("click", openPopupAddCard)
 formAddCard.addEventListener("submit", CardAddSubmitHandler)
