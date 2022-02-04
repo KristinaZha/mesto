@@ -1,109 +1,152 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="pages/index.css" />
 
     <title>Mesto</title>
-</head>
+  </head>
 
-<body class="root">
+  <body class="root">
     <div class="page">
-        <header class="header">
-            <img class="header__logo" src="image/logo.svg" alt="Место" />
-
-        </header>
-        <main>
-            <section class="profile">
-                <img class="profile__avatar" src="image/Avatar.jpg" alt="Аватарка" />
-                <div class="profile__box">
-                    <div class="profile__text">
-                        <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__edit-button">
-                            <img src="image/button.svg" alt="Кнопка Редактировать" />
-                        </button>
-                    </div>
-                    <p class="profile__subtitle">Исследователь океана</p>
-                </div>
-                <button type="button" class="profile__button">
-                    <img class="profile__pic" src="image/Vector.svg" alt="Плюс" />
-                </button>
-            </section>
-            <section class="elements">
-
-                <template class="template">
-                    <div class="element">
-                        <button class="element__delete" type="button"></button>
-                        <img class="element__pic" src="#" alt="Вид на храм" />
-                        <div class="element__box">
-                            <h3 class="element__title"></h3>
-                            <button type="button" class="element__like">
-                            </button>
-                        </div>
-                    </div>
-                </template>
-            </section>
-        </main>
-        <footer class="footer">
-            <p class="footer__subtitle">&copy;2020 Mesto Russia</p>
-        </footer>
+      <header class="header">
+        <img class="header__logo" src="image/logo.svg" alt="Место" />
+      </header>
+      <main>
+        <section class="profile">
+          <img class="profile__avatar" src="image/Avatar.jpg" alt="Аватарка" />
+          <div class="profile__box">
+            <div class="profile__text">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button">
+                <img src="image/button.svg" alt="Кнопка Редактировать" />
+              </button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+          <button type="button" class="profile__button">
+            <img class="profile__pic" src="image/Vector.svg" alt="Плюс" />
+          </button>
+        </section>
+        <section class="elements">
+          <template class="template">
+            <div class="element">
+              <button class="element__delete" type="button"></button>
+              <img class="element__pic" src="#" alt="Вид на храм" />
+              <div class="element__box">
+                <h3 class="element__title"></h3>
+                <button type="button" class="element__like"></button>
+              </div>
+            </div>
+          </template>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__subtitle">&copy;2020 Mesto Russia</p>
+      </footer>
     </div>
 
-
-
     <div class="popup popup-profile">
-        <div class="popup-profile__window">
-            <button type="button" class="popup-profile__close-button"><img class="popup-profile__close-image"
-                    src="image/Close_Icon.svg" alt="Кнопка закрытия"></button>
-            <h2 class="popup-profile__title">Редактировать профиль</h2>
-            <form name="formpopup" action="#" class="form form-profile" novalidate>
-                <input id="input__name" required minlength="2" maxlength="40" name="textname"
-                    class="form__input form__input_name " type="text" value="" />
-                <span id="input__name-error" class="error-message">Вы пропустили это поле</span>
-                <input id="input__proff" required minlength="2" maxlength="200" name="textrole"
-                    class="form__input form__input_role" type="text" value="" />
-                <span id="input__proff-error" class="error-message ">Вы пропустили это поле</span>
-                <button type="submit" class="form__type-submit">Сохранить</button>
-            </form>
-        </div>
+      <div class="popup-profile__window">
+        <button type="button" class="popup-profile__close-button">
+          <img
+            class="popup-profile__close-image"
+            src="image/Close_Icon.svg"
+            alt="Кнопка закрытия"
+          />
+        </button>
+        <h2 class="popup-profile__title">Редактировать профиль</h2>
+        <form name="formpopup" action="#" class="form form-profile" novalidate>
+          <input
+            id="input__name"
+            required
+            minlength="2"
+            maxlength="40"
+            name="textname"
+            class="form__input form__input_name"
+            type="text"
+            value=""
+          />
+          <span id="input__name-error" class="error-message"
+            >Вы пропустили это поле</span
+          >
+          <input
+            id="input__proff"
+            required
+            minlength="2"
+            maxlength="200"
+            name="textrole"
+            class="form__input form__input_role"
+            type="text"
+            value=""
+          />
+          <span id="input__proff-error" class="error-message"
+            >Вы пропустили это поле</span
+          >
+          <button type="submit" class="form__type-submit">Сохранить</button>
+        </form>
+      </div>
     </div>
 
     <div class="popup popup-add">
-        <div class="popup-add__window">
-            <button type="button" class="popup-add__close-button "><img class="popup-add__close-image"
-                    src="image/Close_Icon.svg" alt=""></button>
-            <h2 class="popup-add__title">Новое место</h2>
-            <form class="form form-card" name="formadd" action="#"  novalidate>
-                <input id="input__username" class="form__input form__input_text" required minlength="2" maxlength="30"
-                    name="name" placeholder="Название" type="text" value="" />
-                <span id="input__username-error" class="error-message">Вы пропустили это поле</span>
-                <input id="input__href" required name="href" placeholder="Ссылка на картинку" type="url"
-                    class="form__input form__input_image " value="" />
-                <span id="input__href-error" class="error-message">Введите адрес сайта</span>
-                <button type="submit" class="form__type-submit">Сохранить</button>
-            </form>
-        </div>
+      <div class="popup-add__window">
+        <button type="button" class="popup-add__close-button">
+          <img
+            class="popup-add__close-image"
+            src="image/Close_Icon.svg"
+            alt=""
+          />
+        </button>
+        <h2 class="popup-add__title">Новое место</h2>
+        <form class="form form-card" name="formadd" action="#" novalidate>
+          <input
+            id="input__username"
+            class="form__input form__input_text"
+            required
+            minlength="2"
+            maxlength="30"
+            name="name"
+            placeholder="Название"
+            type="text"
+            value=""
+          />
+          <span id="input__username-error" class="error-message"
+            >Вы пропустили это поле</span
+          >
+          <input
+            id="input__href"
+            required
+            name="href"
+            placeholder="Ссылка на картинку"
+            type="url"
+            class="form__input form__input_image"
+            value=""
+          />
+          <span id="input__href-error" class="error-message"
+            >Введите адрес сайта</span
+          >
+          <button type="submit" class="form__type-submit">Сохранить</button>
+        </form>
+      </div>
     </div>
 
-
-
-
-
     <div class="popup popup-foto">
-        <figure>
-            <img src="#" class="popup-foto__image" alt="Картинка">
-            <figcaption class="popup-foto__caption"></figcaption>
-        </figure>
+      <figure>
+        <img src="#" class="popup-foto__image" alt="Картинка" />
+        <figcaption class="popup-foto__caption"></figcaption>
+      </figure>
 
-        <button type="button" class="popup-foto__close-button"><img src="C:\Users\Кристина\mesto\image\Close_Icon.svg"
-                class="popup-foto__button-image" alt="Крестик"></button>
-
+      <button type="button" class="popup-foto__close-button">
+        <img
+          src="C:\Users\Кристина\mesto\image\Close_Icon.svg"
+          class="popup-foto__button-image"
+          alt="Крестик"
+        />
+      </button>
     </div>
     <script src="scripts/index.js"></script>
     <script src="scripts/validation.js"></script>
-</body>
-
+  </body>
 </html>
