@@ -11,7 +11,7 @@ const formElement = document.querySelector(".form")
 const userNameInput = document.querySelector(".form__input_name")
 const formInputRole = document.querySelector(".form__input_role")
 
-const popupAddCard = document.querySelector(".popup-add")
+const popupAddCard = document.querySelector(".popup-add")//
 const buttonCloseAdd = document.querySelector(".popup-add__close-button")
 
 const popupPhoto = document.querySelector(".popup-foto")
@@ -29,7 +29,16 @@ const template = document.querySelector(".template")
 const name = document.querySelector(".form__input_text")
 const hrefPic = document.querySelector(".form__input_image")
 const formAddCard = document.querySelector(".form-card")
-const buttonSubmit = document.querySelector(".form__type-submit")
+const submitButton = popupAddCard.querySelector(".form__type-submit")//
+
+
+function openAddCardModal() {
+
+ openPopup(popupAddCard)
+ disableSubmitButton(submitButton)
+};
+buttonAdd.addEventListener('click', openAddCardModal)
+
 
 // массив
 const initialCards = [
@@ -91,7 +100,6 @@ const createDomNode = (item) => {
     buttonLike.classList.toggle("element__like-activ")
   })
 
-  elementTemplate.prepend
   return elementTemplate
 }
 
@@ -104,7 +112,7 @@ elements.append(...result)
 function openPopup(popup) {
   popup.classList.add("popup_opened")
   document.addEventListener("keydown", closePopupEscape)
-}
+  }
 
 // ф-я закрытия попапов
 function closePopup(popup) {
@@ -135,12 +143,16 @@ function openProfile() {
   openPopup(popupProfile)
 }
 
+
+
+
 //форма изменений профайла
 function handleSubmitProfileForm(evt) {
   evt.preventDefault()
   userName.textContent = userNameInput.value
   userText.textContent = formInputRole.value
   closePopup(popupProfile)
+
 }
 
 //форма добавления картинки
@@ -153,6 +165,10 @@ function handleSubmitCardForm(evt) {
   closePopup(popupAddCard)
   formAddCard.reset()
 }
+
+
+
+
 
 // слушатели профайла
 

@@ -33,6 +33,12 @@ function toggleButton(form, { submitButtonSelector, inactiveButtonClass }) {
         button.setAttribute('disabled', '');
     }
 };
+
+function disableSubmitButton(button) {
+    button.classList.add('form__button_disabled');
+        button.setAttribute('disabled', '');
+}
+
 // валидация импутов
 function validateInput(form, input, classes) {
     const errorContainer = form.querySelector(`#${input.id}-error`);
