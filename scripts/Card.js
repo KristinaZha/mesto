@@ -1,23 +1,27 @@
 import { popupPhoto, openPopup, imagePopup, captionPopup } from './index.js'
 
-
+const cardSelector = '.template';
 class Card {
-  constructor(data, cardElement) {
+  constructor(data, cardSelector) {
     this._name = data.name;
     this._link = data.link;
-    this._cardElement = cardElement;
-  }
+    this._alt = data.alt;
+    this._cardSelector = cardSelector;
 
+  }
+  // копируется темплейт
   _getTemplate() {
-    const cardElement = document.querySelector('.template').content.querySelector('.element').cloneNode(true);
-    return cardElement
+    const cardElement = document.querySelector(cardSelector).content.querySelector('.element').cloneNode(true);
+    return cardElement;
   }
 
   getCardElement = () => {
     this._card = this._getTemplate();
-    this._setEventListeners();
-    this._card.querySelector('.element__pic').src = this._link;
+    this._cardImage = this._card.querySelector('.element__pic');
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
     this._card.querySelector('.element__title').textContent = this._name;
+    this._setEventListeners();
     return this._card;
   }
 
@@ -31,8 +35,8 @@ class Card {
 
   _previewPicture = () => {
     openPopup(popupPhoto);
-
     imagePopup.src = this._link;
+    imagePopup.alt = this._name;
     captionPopup.textContent = this._name;
   }
 

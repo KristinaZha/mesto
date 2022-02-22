@@ -54,7 +54,7 @@ class FormValidator {
     _toggleButton() {
         if (this._isFormValid()) {
             this.disableSubmitButton();
-        } 
+        }
         else {
             this._enableSubmitButton();
         }

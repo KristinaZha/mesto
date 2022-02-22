@@ -2,7 +2,7 @@ import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
 
-const popup = document.querySelectorAll(".popup")
+const popups = document.querySelectorAll(".popup")
 const popupProfile = document.querySelector(".popup-profile")
 const buttonClose = document.querySelector(".popup-profile__close-button")
 
@@ -36,6 +36,16 @@ const formAddCard = document.querySelector(".form-card")
 const submitButton = popupAddCard.querySelector(".form__type-submit")
 
 
+const settings = {
+  formSelector: '.form',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__type-submit',
+  inputErrorClass: 'form__text_type_error',
+  errorClass: 'error-message_visible',
+  inactiveButtonClass: 'form__button_disabled'
+}
+const editFormValidator = new FormValidator(settings, popupProfile);
+const addCardFormValidator = new FormValidator(settings, popupAddCard);
 
 // массив
 const initialCards = [
@@ -71,20 +81,17 @@ const initialCards = [
   },
 ]
 
-
-
 // ф-я открытия попапов
-export function openPopup(popup) {
-  popup.classList.add("popup_opened")
+export function openPopup(popups) {
+  popups.classList.add("popup_opened")
   document.addEventListener("keydown", closePopupEscape)
 }
 
 // ф-я закрытия попапов
-function closePopup(popup) {
-  popup.classList.remove("popup_opened")
+function closePopup(popups) {
+  popups.classList.remove("popup_opened")
   document.removeEventListener("keydown", closePopupEscape)
 }
-
 
 //ф-я закрытия попапов esc
 function closePopupEscape(evt) {
@@ -92,6 +99,15 @@ function closePopupEscape(evt) {
     closePopup(document.querySelector(".popup_opened"))
   }
 };
+//перебор  попапов, для закрытия по оверлею
+popups.forEach((popups) => {
+  popups.addEventListener("click", (e) => {
+    if (e.target.classList.contains("popup_opened")) {
+      closePopup(popups)
+    }
+
+  })
+});
 
 //форма добавления картинки
 function handleSubmitCardForm(evt) {
@@ -99,26 +115,14 @@ function handleSubmitCardForm(evt) {
   const inputName = name.value
   const inputImage = hrefPic.value
   renderCard({ name: inputName, link: inputImage });
-  //?
-  closePopup(popupAddCard)
   formAddCard.reset()
+  closePopup(popupAddCard)
 }
-//перебор
-popup.forEach((popup) => {
-  popup.addEventListener("click", (e) => {
-    if (e.target.classList.contains("popup_opened")) {
-      closePopup(popup)
-    }
-    if (e.target.classList.contains("popup__close-button")) {
-      closePopup(popup)
-    }
-  })
-});
-function openAddCardModal() {
 
+function openAddCardModal() {
   openPopup(popupAddCard)
+  addCardFormValidator.disableSubmitButton()
 };
-buttonAdd.addEventListener('click', openAddCardModal)
 
 
 //ф-я редактирования профайла
@@ -136,48 +140,38 @@ function handleSubmitProfileForm(evt) {
   closePopup(popupProfile)
 
 }
-const renderCard = (data) => {
-  const card = new Card(data);
-  const cardElement = card.getCardElement();
-  document.querySelector('.elements').prepend(cardElement);
-
-};
-
-initialCards.forEach(renderCard);
-
-const settings = {
-  formSelector: '.form',
-  inputSelector: '.form__input',
-  submitButtonSelector: '.form__type-submit',
-  inputErrorClass: 'form__text_type_error',
-  errorClass: 'error-message_visible',
-  inactiveButtonClass: 'form__button_disabled'
+//новая карточка
+function createCard(data) {
+  const card = new Card(data)
+  const cardElement = card.getCardElement()
+  return cardElement
 }
 
-const editFormValidator = new FormValidator(settings, popupProfile);
-const addCardFormValidator = new FormValidator(settings, popupAddCard);
+function renderCard(data) {
+  const card = createCard(data)
+  elements.prepend(card)
+}
+
+
+initialCards.forEach((data) => {
+  renderCard(data, elements)
+});
 
 editFormValidator.enableValidation();
-
 addCardFormValidator.enableValidation();
-
 
 
 // слушатели профайла
 
 profileButton.addEventListener("click", () => openPopup(popupProfile))
-
-buttonClose.addEventListener("click", () => closePopup(popupProfile))
-
 profileButton.addEventListener("click", openProfile)
 
 // слушатели добавления картинки
 
+buttonAdd.addEventListener('click', openAddCardModal)
 buttonAdd.addEventListener("click", () => openPopup(popupAddCard))
-
+buttonClose.addEventListener("click", () => closePopup(popupProfile))
 buttonCloseAdd.addEventListener("click", () => closePopup(popupAddCard))
-
 buttonClosePhoto.addEventListener("click", () => closePopup(popupPhoto))
-
 formElement.addEventListener("submit", handleSubmitProfileForm)
 formAddCard.addEventListener("submit", handleSubmitCardForm)
