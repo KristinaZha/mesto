@@ -1,6 +1,5 @@
 import { popupPhoto, openPopup, imagePopup, captionPopup } from './index.js'
 
-const cardSelector = '.template';
 class Card {
   constructor(data, cardSelector) {
     this._name = data.name;
@@ -11,8 +10,11 @@ class Card {
   }
   // копируется темплейт
   _getTemplate() {
-    const cardElement = document.querySelector(cardSelector).content.querySelector('.element').cloneNode(true);
-    return cardElement;
+    
+    
+const cardElement = document.querySelector(this._cardSelector).content.querySelector('.element').cloneNode(true);
+return cardElement;
+
   }
 
   getCardElement = () => {

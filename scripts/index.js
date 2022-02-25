@@ -141,8 +141,8 @@ function handleSubmitProfileForm(evt) {
 
 }
 //новая карточка
-function createCard(data) {
-  const card = new Card(data)
+function createCard(data, ) {
+  const card = new Card (data,'.template')
   const cardElement = card.getCardElement()
   return cardElement
 }
