@@ -4,7 +4,7 @@
     this._name = data.name;
     this._link = data.link;
     this._alt = data.name;
-    this._template = document.querySelector(cardSelector).content.querySelector('.element');
+     this._template = document.querySelector(cardSelector).content.querySelector('.element');
     this._handleCardClick = handleCardClick;
 
   }

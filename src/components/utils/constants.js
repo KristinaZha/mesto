@@ -1,8 +1,8 @@
 export{ popupProfile, userName, userText, initialCards,popupPhoto, cardSelector, popupProfileForm,popupFormCard,buttonAdd ,userNameInput, formInputRole, profileButton,popupAddCard, }
 //переменные для редактирования данных
 const popupProfile = ".popup-profile";
-const userName = ".profile__title";//profileNameSelector 
-const userText = '.profile__subtitle';//profileDescSelector 
+const userName = ".profile__title";
+const userText = '.profile__subtitle';
 const popupProfileForm = document.querySelector('.form-profile')
 const userNameInput = popupProfileForm.querySelector(".form__input_name")
 const formInputRole = popupProfileForm.querySelector(".form__input_role")
@@ -14,6 +14,8 @@ const profileButton = document.querySelector(".profile__edit-button")
 const popupAddCard = ".popup-add";
 const popupFormCard = document.querySelector('.form-card');
 const buttonAdd = document.querySelector(".profile__button");
+//переменные для попап с картинкой
+const popupPhoto = ".popup-foto";
 
 //template
 const cardSelector = '.template';
@@ -50,5 +52,3 @@ const initialCards = [
       "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ]
-//переменные для попап с картинкой
- const popupPhoto = document.querySelector(".popup-foto")

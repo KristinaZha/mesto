@@ -53,7 +53,7 @@ const cardList = new Section({
 
 //переменная отпраки данных редактирования карточки
 const popupCard =  new PopupWithForm(popupAddCard, { handleFormSubmit: (formValue) => {
-  const creatCard = newCard(formValue);
+const creatCard = newCard(formValue);
 cardList.addItem(creatCard);
  }
  });
@@ -76,4 +76,16 @@ popupChangeProfile.setEventListeners();
 popupImage.setEventListeners();
 popupCard.setEventListeners();
 
+profileButton.addEventListener('click', () =>{
+  editFormValidator.disableSubmitButton();
+  const userValues = userInfo.getUserInfo();
+  userNameInput.value = userValues.name;
+  formInputRole.value = userValues.proff;
+  popupChangeProfile.open();
+});
+
+buttonAdd.addEventListener('click', () => {
+  addCardFormValidator.disableSubmitButton();
+  popupCard.open();
+});
 
