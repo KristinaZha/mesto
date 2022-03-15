@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="pages/index.css" />
+  
 
   <title>Mesto</title>
 </head>
@@ -13,22 +13,22 @@
 <body class="root">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="image/logo.svg" alt="Место" />
+      <img class="header__logo" src="src/image/logo.svg" alt="Место" />
     </header>
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="image/Avatar.jpg" alt="Аватарка" />
+        <img class="profile__avatar" src="src/image/Avatar.jpg" alt="Аватарка" />
         <div class="profile__box">
           <div class="profile__text">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
             <button type="button" class="profile__edit-button">
-              <img src="image/button.svg" alt="Кнопка Редактировать" />
+              <img src="src/image/button.svg" alt="Кнопка Редактировать" />
             </button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
         <button type="button" class="profile__button">
-          <img class="profile__pic" src="image/Vector.svg" alt="Плюс" />
+          <img class="profile__pic" src="src/image/Vector.svg" alt="Плюс" />
         </button>
       </section>
       <section class="elements">
@@ -52,14 +52,14 @@
   <div class="popup popup-profile">
     <div class="popup-profile__window">
       <button type="button" class="popup-profile__close-button popup__close-button">
-        <img class="popup-profile__close-image" src="image/Close_Icon.svg" alt="Кнопка закрытия" />
+        <img class="popup-profile__close-image" src="src/image/Close_Icon.svg" alt="Кнопка закрытия" />
       </button>
       <h2 class="popup-profile__title">Редактировать профиль</h2>
       <form name="formpopup" action="#" class="form form-profile" novalidate>
-        <input id="input__name" required minlength="2" maxlength="40" name="textname"
+        <input id="input__name" required minlength="2" maxlength="40" name="name"
           class="form__input form__input_name" type="text" value="" />
         <span id="input__name-error" class="error-message">Вы пропустили это поле</span>
-        <input id="input__proff" required minlength="2" maxlength="200" name="textrole"
+        <input id="input__proff" required minlength="2" maxlength="200" name="role"
           class="form__input form__input_role" type="text" value="" />
         <span id="input__proff-error" class="error-message">Вы пропустили это поле</span>
         <button type="submit" class="form__type-submit">Сохранить</button>
@@ -70,7 +70,7 @@
   <div class="popup popup-add">
     <div class="popup-add__window">
       <button type="button" class="popup-add__close-button popup__close-button">
-        <img class="popup-add__close-image" src="image/Close_Icon.svg" alt="" />
+        <img class="popup-add__close-image" src="src/image/Close_Icon.svg" alt="" />
       </button>
       <h2 class="popup-add__title">Новое место</h2>
       <form class="form form-card" name="formadd" action="#" novalidate>
@@ -92,10 +92,10 @@
     </figure>
 
     <button type="button" class="popup-foto__close-button popup__close-button">
-      <img src="image/Close_Icon.svg" class="popup-foto__button-image" alt="Крестик" />
+      <img src="src/image/Close_Icon.svg" class="popup-foto__button-image" alt="Крестик" />
     </button>
   </div>
-  <script type='module' src="./scripts/index.js"></script>
+ 
 
 </body>
 
