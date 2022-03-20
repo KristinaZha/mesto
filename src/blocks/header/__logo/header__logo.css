@@ -3,6 +3,9 @@
   max-width: 142px;
   padding-bottom: 41px;
   padding-top: 45px;
+  background-image: url(../../../images/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media (max-width: 670px) {

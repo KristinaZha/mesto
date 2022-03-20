@@ -4,7 +4,8 @@
   top: -42px;
   cursor: pointer;
   border: none;
-  background: none;
+  background-color: black;
+  background-image: url(../../../images/Close.svg);
   height: 32px;
   width: 32px;
   padding: 0;

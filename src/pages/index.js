@@ -55,6 +55,7 @@ const cardList = new Section({
 const popupCard =  new PopupWithForm(popupAddCard, { handleFormSubmit: (formValue) => {
 const creatCard = newCard(formValue);
 cardList.addItem(creatCard);
+
  }
  });
 

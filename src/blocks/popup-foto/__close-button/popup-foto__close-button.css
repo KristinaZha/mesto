@@ -3,7 +3,8 @@
   height: 32px;
   padding: 0;
   border: none;
-  background: transparent;
+  background-image: url(../../../images/Close.svg);
+ background-color: black;
   position: absolute;
   cursor: pointer;
   z-index: 5000;
