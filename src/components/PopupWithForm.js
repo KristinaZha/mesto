@@ -28,7 +28,7 @@ setEventListeners() {
         evt.preventDefault();
 
         this._handleFormSubmit(this._getInputValues());
-        this.close;
+        this.close();
         
     })
 }

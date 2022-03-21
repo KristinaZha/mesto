@@ -53,7 +53,7 @@ const cardList = new Section({
 
 //переменная отпраки данных редактирования карточки
 const popupCard =  new PopupWithForm(popupAddCard, { handleFormSubmit: (formValue) => {
-const creatCard = newCard(formValue);
+const creatCard = newCard({name: formValue.name, link:formValue.href});
 cardList.addItem(creatCard);
 
  }
