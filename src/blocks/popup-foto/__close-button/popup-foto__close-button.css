@@ -4,7 +4,7 @@
   padding: 0;
   border: none;
   background-image: url(../../../images/Close.svg);
- background-color: black;
+ background-color: transparent;
   position: absolute;
   cursor: pointer;
   z-index: 5000;
