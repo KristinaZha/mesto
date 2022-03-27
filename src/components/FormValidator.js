@@ -6,11 +6,14 @@ export class FormValidator {
         this._button = this._form.querySelector(this._settings.submitButtonSelector);
     }
 
-loading(isLoading) {
-    if(isLoading) {
-        this._button.textContent = 'Сохранение...';
+    loading(isLoading) {
+        if (isLoading) {
+            this._button.textContent = 'Сохранение...';
+        }
+        else{
+            this._button.textContent = 'Coxpанить';
+        }
     }
-}
     //показывает ошибку
     _showError(input, validationMessage) {
         const errorContainer = this._form.querySelector(`#${input.id}-error`);

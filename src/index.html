@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
 
   <title>Mesto</title>
 </head>
@@ -17,13 +17,13 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__avatar" alt="" src="<%=require('./images/Avatar.jpg')%>"/>
-      <button class="profile__avatar-button"></button>
+        <img class="profile__avatar" alt="" src="<%=require('./images/Avatar.jpg')%>" />
+        <button class="profile__avatar-button"></button>
         <div class="profile__box">
           <div class="profile__text">
             <h1 class="profile__title"></h1>
             <button type="button" class="profile__edit-button">
-             </button>
+            </button>
           </div>
           <p class="profile__subtitle"></p>
         </div>
@@ -37,8 +37,11 @@
             <img class="element__pic" src="#" alt="Вид на храм" />
             <div class="element__box">
               <h3 class="element__title"></h3>
-              <button type="button" class="element__like"></button>
-              <span  class="element__like-count"></span>
+              <div class=" element__button">
+                 <button type="button" class="element__like"></button>
+                <span class="element__like-count"></span>
+              </div>
+
             </div>
           </div>
         </template>
@@ -52,15 +55,15 @@
   <div class="popup popup-profile">
     <div class="popup-profile__window">
       <button type="button" class="popup__close-button  popup-profile__close-button">
-        
+
       </button>
       <h2 class="popup-profile__title">Редактировать профиль</h2>
       <form name="formpopup" action="#" class="form form-profile" novalidate>
-        <input id="input__name" required minlength="2" maxlength="40" name="name"
-          class="form__input form__input_name" type="text" value="" />
+        <input id="input__name" required minlength="2" maxlength="40" name="name" class="form__input form__input_name"
+          type="text" value="" />
         <span id="input__name-error" class="error-message">Вы пропустили это поле</span>
-        <input id="input__proff" required minlength="2" maxlength="200" name="role"
-          class="form__input form__input_role" type="text" value="" />
+        <input id="input__proff" required minlength="2" maxlength="200" name="role" class="form__input form__input_role"
+          type="text" value="" />
         <span id="input__proff-error" class="error-message">Вы пропустили это поле</span>
         <button type="submit" class="form__type-submit">Сохранить</button>
       </form>
@@ -83,7 +86,7 @@
       </form>
     </div>
   </div>
-<!---->
+  <!---->
   <div class="popup popup-foto">
     <figure>
       <img src="#" class="popup-foto__image" alt="Картинка" />
@@ -93,28 +96,29 @@
     <button type="button" class="popup__close-button popup-foto__close-button ">
     </button>
   </div>
-<!--Вопрос удаления карточек -->
+  <!--Вопрос удаления карточек -->
   <div class="popup popup-delete">
     <div class="popup-delete__window">
-      <button  class="popup__close-button popup-delete__close-button">
+      <button class="popup__close-button popup-delete__close-button">
       </button>
       <h2 class="popup-delete__title">Вы уверены?</h2>
-      <form class="form form-delete"  novalidate>
-      
+      <form class="form form-delete" novalidate>
+
         <button type="submit" class="form__type-submit  form__type-submit_quesion">Да</button>
       </form>
     </div>
   </div>
   <!-- Смена аватара-->
- 
+
   <div class="popup popup-avatar">
     <div class="popup-avatar__window">
       <button class="popup__close-button popup-avatar__close-button ">
       </button>
       <h2 class="popup-avatar__title">Обновить аватар</h2>
       <form class="form form-avatar" novalidate>
-        <input required type="url" id="input__avatar" placeholder="Ссылка на аватар" name="avatar" class="form__input form__input_avatar">
-      <span class="error-message" id="input__avatar-error">Введите ссылку</span>
+        <input required type="url" id="input__avatar" placeholder="Ссылка на аватар" name="avatar"
+          class="form__input form__input_avatar">
+        <span class="error-message" id="input__avatar-error">Введите ссылку</span>
         <button type="submit" class="form__type-submit">Сохранить</button>
       </form>
     </div>
