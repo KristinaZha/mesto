@@ -74,10 +74,10 @@ function newCard(data) {
     handleCardClick,
     (id) => {
       deletePopup.open();
-      deletePopup.handleFormSubmit(() => {
+      deletePopup.changeFormSubmitHandler(() => {
         api.deleteCard(id)
           .then(() => {
-            card.deleteCard(id);
+            card.deleteCard();
             deletePopup.close();
           })
           .catch(res => {
@@ -119,7 +119,7 @@ const cardList = new Section({
 }, '.elements');
 
 
-//переменная отпраки данных редактирования карточки
+//переменная, отпраки данных редактирования карточки
 const popupCard = new PopupWithForm(popupAddCard, {
   handleFormSubmit: (data) => {
     addCardFormValidator.loading(true);

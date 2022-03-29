@@ -5,9 +5,9 @@ export class ConfirmationPopup extends Popup {
         super(popupSelector);
         this._form = this._popup.querySelector('.form');
     }
-    handleFormSubmit(newSubmitHandler) {
+    changeFormSubmitHandler(newSubmitHandler) {
         this.handleFormSubmit = newSubmitHandler;
-    }
+}
 
     setEventListeners() {
         super.setEventListeners();
